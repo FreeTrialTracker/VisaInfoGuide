@@ -1,0 +1,232 @@
+[build]
+command = "npx next build"
+publish = ".next"
+
+[functions]
+  node_bundler = "nft"
+
+[[plugins]]
+package = "@netlify/plugin-nextjs"
+
+# Passthrough: /_next/static/* must never be caught by any redirect
+[[redirects]]
+  from = "/_next/*"
+  to = "/_next/:splat"
+  status = 200
+  force = false
+
+[[redirects]]
+  from = "http://www.visainfoguide.com/*"
+  to = "https://visainfoguide.com/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "https://www.visainfoguide.com/*"
+  to = "https://visainfoguide.com/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "http://visainfoguide.com/*"
+  to = "https://visainfoguide.com/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/visa-requirements-for-bangladesh/"
+  to = "/"
+  status = 410
+
+[[redirects]]
+  from = "/good-morning-messages-for-all-friends/"
+  to = "/"
+  status = 410
+
+[[redirects]]
+  from = "/national-bartender-day-celebration-2023/"
+  to = "/"
+  status = 410
+
+[[redirects]]
+  from = "/world-aids-day/"
+  to = "/"
+  status = 410
+
+[[redirects]]
+  from = "/category/days-and-messages/"
+  to = "/"
+  status = 410
+
+[[redirects]]
+  from = "/chat-gpt-2023-a-revolutionary-ai/"
+  to = "/"
+  status = 410
+
+[[redirects]]
+  from = "/how-to-apply-in-denmark-for-study/"
+  to = "/passport/denmark"
+  status = 301
+
+[[redirects]]
+  from = "/visit-visa-for-germany-from-japan/"
+  to = "/passport/japan/destination/germany"
+  status = 301
+
+[[redirects]]
+  from = "/trust-islami-life-insurance-ltd/"
+  to = "/"
+  status = 410
+
+[[redirects]]
+  from = "/italy-agriculture-and-sponsor-visa/"
+  to = "/destination/italy"
+  status = 301
+
+[[redirects]]
+  from = "/category/study-immigration-visa/"
+  to = "/visa-guides"
+  status = 301
+
+[[redirects]]
+  from = "/teacher-appreciation-day/"
+  to = "/"
+  status = 410
+
+# /_next/static/* — immutable, long-cache (content-hashed filenames)
+[[headers]]
+  for = "/_next/static/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/static/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/fonts/*"
+  [headers.values]
+    Cache-Control = "public, max-age=86400"
+
+[[headers]]
+  for = "/images/*"
+  [headers.values]
+    Cache-Control = "public, max-age=86400"
+
+# HTML pages — no-cache so browsers always revalidate after deploys
+# This prevents stale HTML referencing hashed assets from a previous build
+[[headers]]
+  for = "/"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+
+[[headers]]
+  for = "/about"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+
+[[headers]]
+  for = "/terms"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+
+[[headers]]
+  for = "/privacy"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+
+[[headers]]
+  for = "/data-sources"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+
+[[headers]]
+  for = "/methodology"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+
+[[headers]]
+  for = "/blog"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+
+[[headers]]
+  for = "/blog/*"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+
+[[headers]]
+  for = "/passport/*"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+
+[[headers]]
+  for = "/destination/*"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+
+[[headers]]
+  for = "/news"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+
+[[headers]]
+  for = "/news/*"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+
+[[headers]]
+  for = "/compare"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+
+[[headers]]
+  for = "/resources"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+
+[[headers]]
+  for = "/research/*"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+
+[[headers]]
+  for = "/visa-guides"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+
+[[headers]]
+  for = "/visa-guides/*"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+
+[[headers]]
+  for = "/tools"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+
+[[headers]]
+  for = "/tools/*"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+
+[[headers]]
+  for = "/trip"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+
+[[headers]]
+  for = "/guides/*"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+
+[[headers]]
+  for = "/sitemap*.xml"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+
+[[headers]]
+  for = "/robots.txt"
+  [headers.values]
+    Cache-Control = "public, max-age=86400"

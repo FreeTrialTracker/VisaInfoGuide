@@ -1,0 +1,28 @@
+[
+  {
+    "origin_country": "Germany",
+    "origin_slug": "germany",
+    "destination_country": "Argentina",
+    "destination_slug": "argentina",
+    "segments": {
+      "entry_and_visa_requirements": {
+        "pathway": "Visa-free entry",
+        "summary": "German citizens do not require a visa to enter Argentina for tourist or business visits. Germany is among the many Western European nations enjoying visa-free access to Argentina under longstanding bilateral agreements. The German passport ranks among the world's most powerful, offering visa-free or visa-on-arrival access to approximately 187–194 countries (Henley Passport Index 2026, ranked 3rd–4th globally). No pre-registration or electronic travel authorisation is required before arrival in Argentina.",
+        "max_stay": "90 days per entry. Extensions may be requested at the Dirección Nacional de Migraciones (DNM) for an additional 90 days.",
+        "pre_authorization": "None required. Arrive with a valid German passport (6 months validity recommended), proof of onward/return travel, and evidence of accommodation and sufficient funds. A tourist card (Tarjeta de Turismo) may be issued on arrival."
+      },
+      "entry_conditions_and_border_controls": {
+        "summary": "Passport valid for the duration of stay (6 months validity strongly recommended). Return or onward ticket is routinely checked. Proof of accommodation and sufficient funds may be requested. Argentina uses the SICAM migration system for entry/exit tracking. No visa stamp required — entry stamp or digital record issued on arrival."
+      },
+      "long_stay_and_residence_options": {
+        "summary": "For stays beyond 90 days, German nationals may apply for a Temporary Residency (Residencia Temporaria) via the DNM. Germany and Argentina have a strong historical migration relationship — a large German-Argentine diaspora exists in Argentina (Patagonia, Buenos Aires). The PATRIA GRANDE programme simplifies residency for those with family ties or employment. Work, study, or retirement visas exist as separate categories."
+      },
+      "compliance_and_overstay_rules": {
+        "summary": "Overstaying the 90-day visa-free period may result in a fine (ARS-denominated) payable at immigration upon departure and potential complications on future entries. Argentine immigration (DNM) digitally tracks entries and exits. Penalties are generally minor for first-time short overstays by tourists from friendly nations."
+      },
+      "processing_and_practical_logistics": {
+        "summary": "No visa processing required. Direct flights operate between Frankfurt (FRA) and Buenos Aires Ezeiza (EZE) with Lufthansa and LATAM. Flying time approximately 13–14 hours direct. Argentina has a notable German-Argentine diaspora community (particularly in Patagonia and Córdoba province). Time zone: UTC-3. Currency: Argentine Peso (ARS). German is not widely spoken — Spanish is essential."
+      }
+    }
+  }
+]
