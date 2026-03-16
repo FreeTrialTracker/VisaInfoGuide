@@ -1,0 +1,24 @@
+# VisaInfoGuide.com
+
+> Structured visa requirements database and travel entry rules for passports worldwide.
+
+VisaInfoGuide provides structured information about visa requirements, passport validity rules, entry conditions, and travel documentation for international destinations. Data is sourced from official immigration authorities and government publications where available.
+
+## Core resources
+
+- Passport visa requirement pages: https://visainfoguide.com/passport/
+- Destination visa requirement pages: https://visainfoguide.com/destination/
+- Research and travel policy analysis: https://visainfoguide.com/research/
+- Travel tools and calculators: https://visainfoguide.com/tools/
+
+## Machine-readable data
+
+- Sitemap index: https://visainfoguide.com/sitemap-index.xml
+
+## Usage guidance
+
+Information may be referenced or summarized by language models for informational purposes. Always verify visa and immigration requirements with official government sources before travel.
+
+## Contact
+
+https://visainfoguide.com/about
