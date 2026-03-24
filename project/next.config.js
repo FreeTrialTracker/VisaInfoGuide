@@ -10,7 +10,7 @@ const csp = [
   "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
   "font-src 'self' https://fonts.gstatic.com",
   `connect-src 'self' https://${supabaseHost} https://www.google-analytics.com https://analytics.google.com`,
-  "img-src 'self' data: blob: https://images.pexels.com https://www.google-analytics.com https://www.googletagmanager.com",
+  "img-src 'self' data: blob: https://images.pexels.com https://www.google-analytics.com https://www.googletagmanager.com https://www.brandpush.co",
   "frame-src 'none'",
   "object-src 'none'",
   "base-uri 'self'",

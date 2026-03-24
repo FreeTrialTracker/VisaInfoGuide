@@ -2,6 +2,7 @@ export const revalidate = 3600;
 
 import { Metadata } from 'next';
 import TripVisaFinder from '@/components/TripVisaFinder';
+import BrandTrustBadge from '@/components/BrandTrustBadge';
 import LatestVisaNews from '@/components/news/LatestVisaNews';
 import LatestBlogPosts from '@/components/blog/LatestBlogPosts';
 import HomeNavCards from '@/components/HomeNavCards';
@@ -106,6 +107,8 @@ export default async function Home() {
           </div>
 
           <TripVisaFinder passports={passports} destinations={destinations} />
+
+          <BrandTrustBadge />
 
           <div className="mt-8 text-center text-sm text-gray-500">
             <p>
