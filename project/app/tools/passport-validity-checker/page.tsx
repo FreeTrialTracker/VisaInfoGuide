@@ -129,30 +129,6 @@ const conceptCards = [
 export default function PassportValidityCheckerPage() {
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            '@context': 'https://schema.org',
-            '@type': 'SoftwareApplication',
-            name: 'Passport Validity Checker',
-            description: 'Check whether your passport is valid long enough for your destination and travel dates.',
-            url: canonicalUrl('/tools/passport-validity-checker'),
-            applicationCategory: 'TravelApplication',
-            operatingSystem: 'Web',
-            offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
-            author: { '@type': 'Organization', name: 'VisaInfoGuide', url: 'https://visainfoguide.com' },
-            breadcrumb: {
-              '@type': 'BreadcrumbList',
-              itemListElement: [
-                { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://visainfoguide.com' },
-                { '@type': 'ListItem', position: 2, name: 'Tools', item: 'https://visainfoguide.com/tools' },
-                { '@type': 'ListItem', position: 3, name: 'Passport Validity Checker', item: canonicalUrl('/tools/passport-validity-checker') },
-              ],
-            },
-          }),
-        }}
-      />
 
       <div className="min-h-screen bg-gradient-to-b from-blue-50 via-white to-white">
         <div className="container mx-auto px-4 py-8 max-w-4xl">

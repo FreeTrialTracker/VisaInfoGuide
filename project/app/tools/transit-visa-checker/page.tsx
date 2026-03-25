@@ -157,36 +157,12 @@ export default function TransitVisaCheckerPage() {
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
             '@context': 'https://schema.org',
-            '@type': 'SoftwareApplication',
-            name: 'Transit Visa Checker',
-            description:
-              'Check transit visa requirements for airport layovers — airside, self-transfer, terminal changes, and exemptions.',
-            url: canonicalUrl('/tools/transit-visa-checker'),
-            applicationCategory: 'TravelApplication',
-            operatingSystem: 'Web',
-            offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
-            author: { '@type': 'Organization', name: 'VisaInfoGuide', url: 'https://visainfoguide.com' },
-            breadcrumb: {
-              '@type': 'BreadcrumbList',
-              itemListElement: [
-                { '@type': 'ListItem', position: 1, name: 'Home', item: canonicalUrl('/') },
-                { '@type': 'ListItem', position: 2, name: 'Tools', item: canonicalUrl('/tools') },
-                {
-                  '@type': 'ListItem',
-                  position: 3,
-                  name: 'Transit Visa Checker',
-                  item: canonicalUrl('/tools/transit-visa-checker'),
-                },
-              ],
-            },
-            mainEntity: {
-              '@type': 'FAQPage',
-              mainEntity: faqItems.map(item => ({
-                '@type': 'Question',
-                name: item.q,
-                acceptedAnswer: { '@type': 'Answer', text: item.a },
-              })),
-            },
+            '@type': 'FAQPage',
+            mainEntity: faqItems.map(item => ({
+              '@type': 'Question',
+              name: item.q,
+              acceptedAnswer: { '@type': 'Answer', text: item.a },
+            })),
           }),
         }}
       />

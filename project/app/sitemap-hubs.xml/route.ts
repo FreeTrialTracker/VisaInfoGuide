@@ -97,15 +97,6 @@ export async function GET() {
     <priority>0.9</priority>
   </url>`);
 
-  getAllRegionSlugs().forEach(slug => {
-    urls.push(`
-  <url>
-    <loc>${baseUrl}/destinations/${slug}</loc>
-    <lastmod>${currentDate}</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>`);
-  });
 
   urls.push(`
   <url>

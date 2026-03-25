@@ -117,30 +117,6 @@ const relatedTools = [
 export default function TripEntryRiskCheckPage() {
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            '@context': 'https://schema.org',
-            '@type': 'SoftwareApplication',
-            name: 'Trip Entry Risk Check',
-            description: 'Combined travel entry risk assessment covering visa, passport validity, transit, onward ticket, and Schengen stay limits.',
-            url: canonicalUrl('/tools/trip-entry-risk-check'),
-            applicationCategory: 'TravelApplication',
-            operatingSystem: 'Web',
-            offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
-            author: { '@type': 'Organization', name: 'VisaInfoGuide', url: 'https://visainfoguide.com' },
-            breadcrumb: {
-              '@type': 'BreadcrumbList',
-              itemListElement: [
-                { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://visainfoguide.com' },
-                { '@type': 'ListItem', position: 2, name: 'Tools', item: 'https://visainfoguide.com/tools' },
-                { '@type': 'ListItem', position: 3, name: 'Trip Entry Risk Check', item: canonicalUrl('/tools/trip-entry-risk-check') },
-              ],
-            },
-          }),
-        }}
-      />
 
       <div className="min-h-screen bg-gradient-to-b from-slate-50 via-white to-white">
         <div className="container mx-auto px-4 py-8 max-w-4xl">

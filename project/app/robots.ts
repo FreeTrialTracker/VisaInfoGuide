@@ -1,16 +1,14 @@
 import { MetadataRoute } from 'next';
 
 export default function robots(): MetadataRoute.Robots {
-  const baseUrl = 'https://visainfoguide.com';
-
   return {
     rules: [
       {
         userAgent: '*',
-        allow: '/',
-        disallow: ['/api/', '/admin/', '/_next/'],
+        allow: ['/', '/_next/', '/_next/static/', '/_next/image/', '/images/', '/assets/'],
+        disallow: ['/api/'],
       },
     ],
-    sitemap: `${baseUrl}/sitemap-index.xml`,
+    sitemap: 'https://visainfoguide.com/sitemap.xml',
   };
 }

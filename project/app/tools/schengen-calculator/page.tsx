@@ -151,32 +151,6 @@ export default function SchengenCalculatorPage() {
         }}
       />
 
-      <script
-  type="application/ld+json"
-  dangerouslySetInnerHTML={{
-    __html: JSON.stringify({
-      '@context': 'https://schema.org',
-      '@type': 'SoftwareApplication',
-      name: 'Schengen 90/180 Rule Calculator',
-      url: 'https://visainfoguide.com/tools/schengen-calculator',
-      applicationCategory: 'TravelApplication',
-      operatingSystem: 'Web',
-      description:
-        'Free online calculator for tracking Schengen Area stays using the rolling 180-day window method',
-      author: {
-        '@type': 'Organization',
-        name: 'VisaInfoGuide',
-        url: 'https://visainfoguide.com',
-      },
-      offers: {
-        '@type': 'Offer',
-        price: '0',
-        priceCurrency: 'USD',
-        priceValidUntil: '2030-12-31'
-      }
-    })
-  }}
-/>
 
 
       <script

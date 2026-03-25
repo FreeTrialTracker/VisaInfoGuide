@@ -75,6 +75,26 @@ function BlogCard({ post }: { post: BlogPost }) {
   );
 }
 
+const PAGE_SIZE = 3;
+const MAX_PAGE_BUTTONS = 5;
+
+function getPaginationRange(current: number, total: number): (number | '...')[] {
+  if (total <= MAX_PAGE_BUTTONS) {
+    return Array.from({ length: total }, (_, i) => i + 1);
+  }
+  const pages: (number | '...')[] = [];
+  const left = Math.max(2, current - 1);
+  const right = Math.min(total - 1, current + 1);
+
+  pages.push(1);
+  if (left > 2) pages.push('...');
+  for (let i = left; i <= right; i++) pages.push(i);
+  if (right < total - 1) pages.push('...');
+  pages.push(total);
+
+  return pages;
+}
+
 export default function BlogListingClient() {
   const [posts, setPosts] = useState<BlogPost[]>([]);
   const [total, setTotal] = useState(0);
@@ -86,7 +106,7 @@ export default function BlogListingClient() {
   const fetchPosts = useCallback(async (p: number, q: string) => {
     setLoading(true);
     try {
-      const params = new URLSearchParams({ page: String(p), q });
+      const params = new URLSearchParams({ page: String(p), q, pageSize: String(PAGE_SIZE) });
       const res = await fetch(`/api/blog?${params}`);
       const data = await res.json();
       setPosts(data.posts || []);
@@ -102,7 +122,8 @@ export default function BlogListingClient() {
     fetchPosts(page, search);
   }, [page, search, fetchPosts]);
 
-  const totalPages = Math.ceil(total / 5);
+  const totalPages = Math.ceil(total / PAGE_SIZE);
+  const paginationRange = getPaginationRange(page, totalPages);
 
   const handleSearch = () => {
     setSearch(searchInput);
@@ -166,31 +187,55 @@ export default function BlogListingClient() {
       )}
 
       {totalPages > 1 && (
-        <div className="mt-10 flex items-center justify-center gap-3">
+        <nav aria-label="Blog pagination" className="mt-10 flex items-center justify-center gap-1.5">
           <Button
             variant="outline"
             size="sm"
             onClick={() => setPage((p) => Math.max(1, p - 1))}
             disabled={page === 1}
-            className="flex items-center gap-1"
+            className="flex items-center gap-1 px-3"
+            aria-label="Previous page"
           >
             <ChevronLeft className="h-4 w-4" />
-            Previous
+            <span className="hidden sm:inline">Previous</span>
           </Button>
-          <span className="text-sm text-gray-600 font-medium">
-            Page {page} of {totalPages}
-          </span>
+
+          {paginationRange.map((item, idx) =>
+            item === '...' ? (
+              <span key={`ellipsis-${idx}`} className="px-2 text-gray-400 text-sm select-none">
+                ...
+              </span>
+            ) : (
+              <Button
+                key={item}
+                variant={page === item ? 'default' : 'outline'}
+                size="sm"
+                onClick={() => setPage(item)}
+                className={
+                  page === item
+                    ? 'bg-blue-600 hover:bg-blue-700 text-white border-blue-600 min-w-[36px]'
+                    : 'min-w-[36px] text-gray-700'
+                }
+                aria-label={`Page ${item}`}
+                aria-current={page === item ? 'page' : undefined}
+              >
+                {item}
+              </Button>
+            )
+          )}
+
           <Button
             variant="outline"
             size="sm"
             onClick={() => setPage((p) => Math.min(totalPages, p + 1))}
             disabled={page === totalPages}
-            className="flex items-center gap-1"
+            className="flex items-center gap-1 px-3"
+            aria-label="Next page"
           >
-            Next
+            <span className="hidden sm:inline">Next</span>
             <ChevronRight className="h-4 w-4" />
           </Button>
-        </div>
+        </nav>
       )}
     </div>
   );

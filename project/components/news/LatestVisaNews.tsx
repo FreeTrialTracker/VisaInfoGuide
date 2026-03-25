@@ -192,7 +192,29 @@ function NewsCard({ post }: { post: NewsPost }) {
   );
 }
 
-export default function LatestVisaNews() {
+const PAGE_SIZE = 3;
+const MAX_PAGE_BUTTONS = 5;
+
+function getPaginationRange(current: number, total: number): (number | '...')[] {
+  if (total <= MAX_PAGE_BUTTONS) {
+    return Array.from({ length: total }, (_, i) => i + 1);
+  }
+  const pages: (number | '...')[] = [];
+  const left = Math.max(2, current - 1);
+  const right = Math.min(total - 1, current + 1);
+  pages.push(1);
+  if (left > 2) pages.push('...');
+  for (let i = left; i <= right; i++) pages.push(i);
+  if (right < total - 1) pages.push('...');
+  pages.push(total);
+  return pages;
+}
+
+interface LatestVisaNewsProps {
+  isStandalone?: boolean;
+}
+
+export default function LatestVisaNews({ isStandalone = false }: LatestVisaNewsProps) {
   const [posts, setPosts] = useState<NewsPost[]>([]);
   const [total, setTotal] = useState(0);
   const [page, setPage] = useState(1);
@@ -203,7 +225,7 @@ export default function LatestVisaNews() {
   const fetchPosts = useCallback(async (p: number, q: string) => {
     setLoading(true);
     try {
-      const params = new URLSearchParams({ page: String(p), q });
+      const params = new URLSearchParams({ page: String(p), q, pageSize: String(PAGE_SIZE) });
       const res = await fetch(`/api/news?${params}`);
       const data = await res.json();
       setPosts(data.posts || []);
@@ -219,7 +241,8 @@ export default function LatestVisaNews() {
     fetchPosts(page, search);
   }, [page, search, fetchPosts]);
 
-  const totalPages = Math.ceil(total / 5);
+  const totalPages = Math.ceil(total / PAGE_SIZE);
+  const paginationRange = getPaginationRange(page, totalPages);
 
   const handleSearch = () => {
     setSearch(searchInput);
@@ -231,30 +254,32 @@ export default function LatestVisaNews() {
   };
 
   return (
-    <section className="mt-16">
-      <div className="flex items-center justify-between gap-3 mb-2">
-        <div className="flex items-center gap-3">
-          <div className="flex items-center justify-center w-10 h-10 rounded-lg bg-teal-50 border border-teal-100">
-            <Newspaper className="h-5 w-5 text-teal-600" />
+    <section className={isStandalone ? '' : 'mt-16'}>
+      {!isStandalone && (
+        <div className="flex items-center justify-between gap-3 mb-2">
+          <div className="flex items-center gap-3">
+            <div className="flex items-center justify-center w-10 h-10 rounded-lg bg-teal-50 border border-teal-100">
+              <Newspaper className="h-5 w-5 text-teal-600" />
+            </div>
+            <div>
+              <h2 className="text-2xl font-bold text-gray-900">Latest Visa &amp; Immigration News</h2>
+              <p className="text-sm text-gray-500 mt-0.5">Up-to-date policy changes and entry requirement updates</p>
+              <a
+                href="https://www.linkedin.com/in/matthew-lin-profilepage/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1.5 mt-1 text-xs text-gray-500 hover:text-teal-700 transition-colors"
+              >
+                <User className="h-3 w-3" />
+                <span>By <span className="font-medium">Matthew Lin</span></span>
+              </a>
+            </div>
           </div>
-          <div>
-            <h2 className="text-2xl font-bold text-gray-900">Latest Visa & Immigration News</h2>
-            <p className="text-sm text-gray-500 mt-0.5">Up-to-date policy changes and entry requirement updates</p>
-          <a
-            href="https://www.linkedin.com/in/matthew-lin-profilepage/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-1.5 mt-1 text-xs text-gray-500 hover:text-teal-700 transition-colors"
-          >
-            <User className="h-3 w-3" />
-            <span>By <span className="font-medium">Matthew Lin</span></span>
-          </a>
-          </div>
+          <Link href="/news" className="text-sm text-teal-600 hover:text-teal-800 font-medium flex-shrink-0">
+            View all
+          </Link>
         </div>
-        <Link href="/news" className="text-sm text-teal-600 hover:text-teal-800 font-medium flex-shrink-0">
-          View all
-        </Link>
-      </div>
+      )}
 
       <div className="mt-5 mb-6 flex gap-2">
         <div className="relative flex-1">
@@ -271,6 +296,20 @@ export default function LatestVisaNews() {
           Search
         </Button>
       </div>
+
+      {search && (
+        <div className="mb-4 flex items-center gap-2">
+          <span className="text-sm text-gray-600">
+            {total} result{total !== 1 ? 's' : ''} for <strong>&quot;{search}&quot;</strong>
+          </span>
+          <button
+            onClick={() => { setSearch(''); setSearchInput(''); setPage(1); }}
+            className="text-sm text-teal-600 hover:underline"
+          >
+            Clear
+          </button>
+        </div>
+      )}
 
       {loading ? (
         <div className="space-y-4">
@@ -292,31 +331,55 @@ export default function LatestVisaNews() {
       )}
 
       {totalPages > 1 && (
-        <div className="mt-8 flex items-center justify-center gap-3">
+        <nav aria-label="News pagination" className="mt-8 flex items-center justify-center gap-1.5">
           <Button
             variant="outline"
             size="sm"
             onClick={() => setPage((p) => Math.max(1, p - 1))}
             disabled={page === 1}
-            className="flex items-center gap-1"
+            className="flex items-center gap-1 px-3"
+            aria-label="Previous page"
           >
             <ChevronLeft className="h-4 w-4" />
-            Previous
+            <span className="hidden sm:inline">Previous</span>
           </Button>
-          <span className="text-sm text-gray-600 font-medium">
-            Page {page} of {totalPages}
-          </span>
+
+          {paginationRange.map((item, idx) =>
+            item === '...' ? (
+              <span key={`ellipsis-${idx}`} className="px-2 text-gray-400 text-sm select-none">
+                ...
+              </span>
+            ) : (
+              <Button
+                key={item}
+                variant={page === item ? 'default' : 'outline'}
+                size="sm"
+                onClick={() => setPage(item)}
+                className={
+                  page === item
+                    ? 'bg-teal-600 hover:bg-teal-700 text-white border-teal-600 min-w-[36px]'
+                    : 'min-w-[36px] text-gray-700'
+                }
+                aria-label={`Page ${item}`}
+                aria-current={page === item ? 'page' : undefined}
+              >
+                {item}
+              </Button>
+            )
+          )}
+
           <Button
             variant="outline"
             size="sm"
             onClick={() => setPage((p) => Math.min(totalPages, p + 1))}
             disabled={page === totalPages}
-            className="flex items-center gap-1"
+            className="flex items-center gap-1 px-3"
+            aria-label="Next page"
           >
-            Next
+            <span className="hidden sm:inline">Next</span>
             <ChevronRight className="h-4 w-4" />
           </Button>
-        </div>
+        </nav>
       )}
     </section>
   );

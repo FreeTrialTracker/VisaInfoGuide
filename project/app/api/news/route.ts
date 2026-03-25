@@ -10,7 +10,7 @@ export async function GET(request: Request) {
   const { searchParams } = new URL(request.url);
   const page = parseInt(searchParams.get('page') || '1', 10);
   const search = searchParams.get('q') || '';
-  const pageSize = 5;
+  const pageSize = Math.min(parseInt(searchParams.get('pageSize') || '5', 10), 20);
   const offset = (page - 1) * pageSize;
 
   let query = supabase

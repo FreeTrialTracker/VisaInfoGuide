@@ -119,30 +119,12 @@ export default function AirlineBoardingCheckPage() {
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
             '@context': 'https://schema.org',
-            '@type': 'SoftwareApplication',
-            name: 'Airline Boarding Check Tool',
-            description: 'Assess flight boarding readiness by checking visa, passport validity, transit, and onward ticket requirements.',
-            url: canonicalUrl('/tools/airline-boarding-check'),
-            applicationCategory: 'TravelApplication',
-            operatingSystem: 'Web',
-            offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
-            author: { '@type': 'Organization', name: 'VisaInfoGuide', url: 'https://visainfoguide.com' },
-            breadcrumb: {
-              '@type': 'BreadcrumbList',
-              itemListElement: [
-                { '@type': 'ListItem', position: 1, name: 'Home', item: canonicalUrl('/') },
-                { '@type': 'ListItem', position: 2, name: 'Tools', item: canonicalUrl('/tools') },
-                { '@type': 'ListItem', position: 3, name: 'Airline Boarding Check', item: canonicalUrl('/tools/airline-boarding-check') },
-              ],
-            },
-            mainEntity: {
-              '@type': 'FAQPage',
-              mainEntity: faqItems.map(item => ({
-                '@type': 'Question',
-                name: item.q,
-                acceptedAnswer: { '@type': 'Answer', text: item.a },
-              })),
-            },
+            '@type': 'FAQPage',
+            mainEntity: faqItems.map(item => ({
+              '@type': 'Question',
+              name: item.q,
+              acceptedAnswer: { '@type': 'Answer', text: item.a },
+            })),
           }),
         }}
       />
