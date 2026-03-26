@@ -6,8 +6,8 @@ import Breadcrumbs from '@/components/Breadcrumbs';
 import { canonicalUrl } from '@/lib/seo';
 
 export const metadata: Metadata = {
-  title: 'Countries with Digital Nomad Visa (2026 Full List) | VisaInfoGuide',
-  description: 'Complete list of countries that offer a digital nomad visa or remote work visa in 2026. Sorted by region with income requirements and stay durations.',
+  title: 'Countries with Digital Nomad Visa 2026 | VisaInfoGuide',
+  description: 'Complete list of countries offering an official digital nomad or remote work visa in 2026. Sorted by region with minimum income requirements, maximum stay durations, and family allowance details.',
   alternates: { canonical: canonicalUrl('/countries-with-digital-nomad-visa') },
   openGraph: {
     title: 'Countries with Digital Nomad Visa (2026 Full List)',

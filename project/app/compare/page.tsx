@@ -48,7 +48,7 @@ export const dynamic = 'force-static';
 export async function generateMetadata(): Promise<Metadata> {
   return {
     title: 'Compare Passports: Visa-Free Access (2026) | VisaInfoGuide',
-    description: 'Compare two passports by visa-free access, visa-on-arrival, eVisa options, and travel requirements. Updated for 2026.',
+    description: 'Compare any two passports side by side: visa-free destination counts, visa-on-arrival access, eVisa eligibility, Schengen allowances, and detailed entry requirements. Updated for 2026.',
     alternates: {
       canonical: 'https://visainfoguide.com/compare',
     },
@@ -58,7 +58,7 @@ export async function generateMetadata(): Promise<Metadata> {
     },
     openGraph: {
       title: 'Compare Passports: Visa-Free Access (2026) | VisaInfoGuide',
-      description: 'Compare two passports by visa-free access, visa-on-arrival, eVisa options, and travel requirements. Updated for 2026.',
+      description: 'Compare any two passports side by side: visa-free destination counts, visa-on-arrival access, eVisa eligibility, Schengen allowances, and detailed entry requirements. Updated for 2026.',
       url: 'https://visainfoguide.com/compare',
       type: 'website',
       images: [
@@ -73,7 +73,7 @@ export async function generateMetadata(): Promise<Metadata> {
     twitter: {
       card: 'summary_large_image',
       title: 'Compare Passports: Visa-Free Access (2026) | VisaInfoGuide',
-      description: 'Compare two passports by visa-free access, visa-on-arrival, eVisa options, and travel requirements. Updated for 2026.',
+      description: 'Compare any two passports side by side: visa-free destination counts, visa-on-arrival access, eVisa eligibility, Schengen allowances, and detailed entry requirements. Updated for 2026.',
       images: ['https://visainfoguide.com/og/compare-og'],
     },
   };

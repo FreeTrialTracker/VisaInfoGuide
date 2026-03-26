@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     canonical: canonicalUrl('/guides/visa-on-arrival-vs-evisa'),
   },
   robots: {
-    index: false,
+    index: true,
     follow: true,
   },
 };

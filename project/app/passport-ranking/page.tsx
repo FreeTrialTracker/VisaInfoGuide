@@ -6,12 +6,12 @@ import Breadcrumbs from '@/components/Breadcrumbs';
 import { canonicalUrl, datasetJsonLd } from '@/lib/seo';
 
 export const metadata: Metadata = {
-  title: 'Passport Ranking 2026 — Compare Passport Strength | VisaInfoGuide',
-  description: 'Compare passport strength by visa-free access, evisa eligibility, and global mobility. See how every passport ranks in 2026.',
+  title: 'Passport Strength Ranking 2026 | VisaInfoGuide',
+  description: 'Compare passport strength by visa-free access, eVisa eligibility, and global mobility. See how every passport ranks in 2026, with country-by-country breakdowns for 100+ passports.',
   alternates: { canonical: canonicalUrl('/passport-ranking') },
   openGraph: {
-    title: 'Passport Ranking 2026 — Compare Passport Strength',
-    description: 'See how every passport ranks in 2026 by visa-free access and global mobility.',
+    title: 'Passport Strength Ranking 2026 | VisaInfoGuide',
+    description: 'Compare passport strength by visa-free access, eVisa eligibility, and global mobility. See how every passport ranks in 2026.',
     type: 'article',
     url: canonicalUrl('/passport-ranking'),
     siteName: 'VisaInfoGuide',

@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     canonical: canonicalUrl('/guides/passport-validity-rules'),
   },
   robots: {
-    index: false,
+    index: true,
     follow: true,
   },
 };

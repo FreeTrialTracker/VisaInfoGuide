@@ -5,8 +5,8 @@ import { canonicalUrl } from '@/lib/seo';
 import { REGIONS, getDestinationsForRegion } from '@/lib/countries';
 
 export const metadata: Metadata = {
-  title: 'Browse Destinations by Region — Visa Requirements 2026 | VisaInfoGuide',
-  description: 'Explore visa requirements and entry rules by geographic region. Browse destinations in Europe, Asia, Americas, Africa, the Middle East, and Oceania.',
+  title: 'Visa Requirements by Destination & Region 2026 | VisaInfoGuide',
+  description: 'Explore visa requirements and entry rules by geographic region. Browse destinations across Europe, Asia, the Americas, Africa, the Middle East, and Oceania — with stay limits, passport validity rules, and eVisa options.',
   alternates: { canonical: canonicalUrl('/destinations') },
   openGraph: {
     title: 'Browse Destinations by Region | VisaInfoGuide',

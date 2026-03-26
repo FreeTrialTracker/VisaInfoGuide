@@ -3,6 +3,7 @@ import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import { canonicalUrl, breadcrumbJsonLd, faqJsonLd } from '@/lib/seo';
 import Breadcrumbs from '@/components/Breadcrumbs';
+import BackNavigation from '@/components/BackNavigation';
 import SummaryBlock from '@/components/visa-guides/SummaryBlock';
 import TableOfContents from '@/components/visa-guides/TableOfContents';
 import FAQBlock from '@/components/visa-guides/FAQBlock';
@@ -3498,6 +3499,7 @@ export default function VisaGuideArticlePage({
 
       <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
         <div className="container mx-auto px-4 py-8 max-w-4xl">
+          <BackNavigation fallbackUrl="/visa-guides" label="Back" />
           <Breadcrumbs
             items={[
               { name: 'Visa Guides', url: '/visa-guides' },

@@ -11,6 +11,7 @@ import CrossDomainLink from '@/components/CrossDomainLink';
 import { getAllDestinationSlugs, getDestinationRegion, getRegionBySlug } from '@/lib/countries';
 import TemporaryUnavailable from '@/components/TemporaryUnavailable';
 import RelatedDestinations from '@/components/RelatedDestinations';
+import BackNavigation from '@/components/BackNavigation';
 import { getContextualDestinationLinks } from '@/lib/data/crosslinks';
 
 export const revalidate = 86400;
@@ -193,6 +194,7 @@ export default async function DestinationPage({
     <div className="min-h-screen bg-white">
       <div className="bg-gradient-to-b from-blue-50 to-white border-b">
         <div className="container mx-auto px-4 py-8">
+          <BackNavigation fallbackUrl="/destinations" label="Back" />
           <nav className="text-sm text-gray-600 mb-4">
             <Link href="/" className="hover:text-blue-600">Home</Link>
             <span className="mx-2">/</span>

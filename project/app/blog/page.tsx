@@ -4,17 +4,26 @@ import BlogListingClient from '@/components/blog/BlogListingClient';
 import BlogSeoAccordion from '@/components/blog/BlogSeoAccordion';
 
 export const metadata: Metadata = {
-  title: 'Visa & Travel Blog | Expert Guides & Checklists | VisaInfoGuide',
-  description: 'In-depth visa guides, application checklists, and travel tips from expert writer Matthew Lin. Schengen visas, cover letters, flight reservations, and more.',
+  title: 'Visa & Travel Blog | Guides & Checklists | VisaInfoGuide',
+  description: 'In-depth visa guides, application checklists, and travel tips from VisaInfoGuide. Covering Schengen visas, cover letters, flight reservations, eVisa applications, and transit rules.',
   alternates: {
     canonical: 'https://visainfoguide.com/blog',
   },
+  robots: {
+    index: true,
+    follow: true,
+  },
   openGraph: {
-    title: 'Visa & Travel Blog | VisaInfoGuide',
-    description: 'In-depth visa guides, application checklists, and travel tips from expert writer Matthew Lin.',
+    title: 'Visa & Travel Blog | Guides & Checklists | VisaInfoGuide',
+    description: 'In-depth visa guides, application checklists, and travel tips. Covering Schengen visas, cover letters, eVisa applications, and transit rules.',
     type: 'website',
     url: 'https://visainfoguide.com/blog',
     siteName: 'VisaInfoGuide',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Visa & Travel Blog | Guides & Checklists | VisaInfoGuide',
+    description: 'In-depth visa guides, application checklists, and travel tips. Schengen visas, eVisa applications, and transit rules.',
   },
 };
 

@@ -7,7 +7,7 @@ import { canonicalUrl } from '@/lib/seo';
 
 export const metadata: Metadata = {
   title: 'eVisa Countries by Passport (2026) | VisaInfoGuide',
-  description: 'Find every country that offers an eVisa for your passport. Browse the full list of eVisa destinations for US, UK, Indian, and 90+ other passports.',
+  description: 'Find every country that offers an eVisa for your passport. Browse the full eVisa destination list for US, UK, Indian, Australian, and 90+ other passports — with processing times, fees, and application details.',
   alternates: {
     canonical: canonicalUrl('/evisa-countries'),
   },

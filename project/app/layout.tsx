@@ -202,6 +202,44 @@ export default function RootLayout({
                 </p>
               </div>
             </div>
+            <div className="border-t border-gray-800 pt-8 mb-8">
+              <h3 className="text-white font-semibold text-sm uppercase tracking-wider mb-4">Travel Resource Network</h3>
+              <div className="grid sm:grid-cols-2 gap-5">
+                <a
+                  href="https://www.immigrationinfoguide.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group flex items-start gap-3 p-4 rounded-lg bg-gray-800 hover:bg-gray-700 transition-colors border border-gray-700 hover:border-gray-500"
+                >
+                  <div className="flex-shrink-0 w-9 h-9 rounded-md bg-blue-900 flex items-center justify-center mt-0.5">
+                    <svg className="w-4.5 h-4.5 text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2" aria-hidden="true">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M9 12h3.75M9 15h3.75M9 18h3.75m3 .75H18a2.25 2.25 0 002.25-2.25V6.108c0-1.135-.845-2.098-1.976-2.192a48.424 48.424 0 00-1.123-.08m-5.801 0c-.065.21-.1.433-.1.664 0 .414.336.75.75.75h4.5a.75.75 0 00.75-.75 2.25 2.25 0 00-.1-.664m-5.8 0A2.251 2.251 0 0113.5 2.25H15c1.012 0 1.867.668 2.15 1.586m-5.8 0c-.376.023-.75.05-1.124.08C9.095 4.01 8.25 4.973 8.25 6.108V8.25m0 0H4.875c-.621 0-1.125.504-1.125 1.125v11.25c0 .621.504 1.125 1.125 1.125h9.75c.621 0 1.125-.504 1.125-1.125V9.375c0-.621-.504-1.125-1.125-1.125H8.25z" />
+                    </svg>
+                  </div>
+                  <div>
+                    <p className="text-white text-sm font-semibold group-hover:text-blue-300 transition-colors">ImmigrationInfoGuide.com</p>
+                    <p className="text-gray-400 text-xs leading-relaxed mt-0.5">Work visas, residency pathways, family reunification, and permanent residence guides for 100+ countries.</p>
+                  </div>
+                </a>
+                <a
+                  href="https://www.restinairport.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group flex items-start gap-3 p-4 rounded-lg bg-gray-800 hover:bg-gray-700 transition-colors border border-gray-700 hover:border-gray-500"
+                >
+                  <div className="flex-shrink-0 w-9 h-9 rounded-md bg-teal-900 flex items-center justify-center mt-0.5">
+                    <svg className="w-4.5 h-4.5 text-teal-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2" aria-hidden="true">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 12l8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25" />
+                    </svg>
+                  </div>
+                  <div>
+                    <p className="text-white text-sm font-semibold group-hover:text-teal-300 transition-colors">RestInAirport.com</p>
+                    <p className="text-gray-400 text-xs leading-relaxed mt-0.5">Airport transit hotels, airside rest options, and layover accommodation guides for 200+ international airports.</p>
+                  </div>
+                </a>
+              </div>
+            </div>
+
             <div className="border-t border-gray-800 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-gray-500">
               <p>© {new Date().getFullYear()} VisaInfoGuide. All rights reserved.</p>
               <div className="flex items-center gap-4">

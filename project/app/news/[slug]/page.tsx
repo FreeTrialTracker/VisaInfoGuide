@@ -1,7 +1,8 @@
 import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
-import { Calendar, ExternalLink, ArrowLeft, Hash, TriangleAlert as AlertTriangle, User } from 'lucide-react';
+import { Calendar, ExternalLink, Hash, TriangleAlert as AlertTriangle, User } from 'lucide-react';
+import BackNavigation from '@/components/BackNavigation';
 import { breadcrumbJsonLd } from '@/lib/seo';
 import { getNewsPost, getNewsPostSlugs } from '@/lib/data/news';
 import { safeLoad } from '@/lib/errors';
@@ -186,13 +187,7 @@ export default async function NewsPostPage({ params }: { params: { slug: string 
         <div className="container mx-auto px-4 py-12">
           <div className="max-w-2xl mx-auto">
 
-            <Link
-              href="/news"
-              className="inline-flex items-center gap-1.5 text-sm text-teal-600 hover:text-teal-800 font-medium mb-8 group"
-            >
-              <ArrowLeft className="h-4 w-4 group-hover:-translate-x-0.5 transition-transform" />
-              All news
-            </Link>
+            <BackNavigation fallbackUrl="/news" label="All news" className="inline-flex items-center gap-2 text-sm text-teal-600 hover:text-teal-800 font-medium mb-8 group min-h-[44px] pr-3" />
 
             <article>
               <div className="flex items-center gap-4 mb-4 flex-wrap">
@@ -278,13 +273,7 @@ export default async function NewsPostPage({ params }: { params: { slug: string 
             </article>
 
             <div className="mt-12 pt-8 border-t border-gray-100">
-              <Link
-                href="/news"
-                className="inline-flex items-center gap-1.5 text-sm text-teal-600 hover:text-teal-800 font-medium group"
-              >
-                <ArrowLeft className="h-4 w-4 group-hover:-translate-x-0.5 transition-transform" />
-                Back to all news
-              </Link>
+              <BackNavigation fallbackUrl="/news" label="Back to all news" className="inline-flex items-center gap-2 text-sm text-teal-600 hover:text-teal-800 font-medium group min-h-[44px] pr-3" />
             </div>
 
           </div>

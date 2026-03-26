@@ -3,6 +3,7 @@ import { Metadata } from 'next';
 import Link from 'next/link';
 import { Calendar, Database, TriangleAlert, CircleCheck, Info } from 'lucide-react';
 import { canonicalUrl } from '@/lib/seo';
+import BackNavigation from '@/components/BackNavigation';
 import {
   getResearchArticleBySlug,
   getAllPublishedResearchSlugs,
@@ -245,6 +246,7 @@ export default async function ResearchArticlePage({ params }: Props) {
     <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
       <article className="container mx-auto px-4 py-12 max-w-5xl">
         <div className="mb-8">
+          <BackNavigation fallbackUrl="/visa-guides" label="Back" />
           <nav className="text-sm text-gray-500 mb-4">
             <Link href="/" className="hover:text-teal-600 transition-colors">Home</Link>
             <span className="mx-2">/</span>

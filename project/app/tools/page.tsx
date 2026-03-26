@@ -5,8 +5,8 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import Breadcrumbs from '@/components/Breadcrumbs';
 
 export const metadata: Metadata = {
-  title: 'Travel Tools | VisaInfoGuide',
-  description: 'Free travel planning tools to help you understand visa requirements, calculate Schengen days, and plan your international trips with confidence.',
+  title: 'Free Visa & Travel Planning Tools (2026) | VisaInfoGuide',
+  description: 'Free travel planning tools for international travelers. Calculate Schengen days, check transit visa requirements, verify passport validity, and assess trip entry risks — all in one place.',
   alternates: {
     canonical: 'https://visainfoguide.com/tools',
   },
@@ -15,8 +15,8 @@ export const metadata: Metadata = {
     follow: true,
   },
   openGraph: {
-    title: 'Travel Tools | VisaInfoGuide',
-    description: 'Free travel planning tools to help you understand visa requirements, calculate Schengen days, and plan your international trips with confidence.',
+    title: 'Free Visa & Travel Planning Tools (2026) | VisaInfoGuide',
+    description: 'Free travel planning tools for international travelers. Calculate Schengen days, check transit visa requirements, verify passport validity, and assess trip entry risks.',
     url: 'https://visainfoguide.com/tools',
     type: 'website',
     images: [
@@ -24,14 +24,14 @@ export const metadata: Metadata = {
         url: 'https://visainfoguide.com/og/tools-og',
         width: 1200,
         height: 630,
-        alt: 'Travel Tools - VisaInfoGuide',
+        alt: 'Visa & Travel Planning Tools - VisaInfoGuide',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Travel Tools | VisaInfoGuide',
-    description: 'Free travel planning tools to help you understand visa requirements, calculate Schengen days, and plan your international trips with confidence.',
+    title: 'Free Visa & Travel Planning Tools (2026) | VisaInfoGuide',
+    description: 'Free travel planning tools for international travelers. Calculate Schengen days, check transit visa requirements, verify passport validity, and assess trip entry risks.',
     images: ['https://visainfoguide.com/og/tools-og'],
   },
 };

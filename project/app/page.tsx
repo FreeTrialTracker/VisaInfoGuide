@@ -13,7 +13,7 @@ import { getFinderData } from '@/lib/homepage-data';
 
 export const metadata: Metadata = {
   title: 'Visa Requirements by Passport (2026) | VisaInfoGuide',
-  description: 'Check visa requirements, visa-free access, and entry rules by passport. Compare stay limits and Schengen 90/180 rules. Updated 2026.',
+  description: 'Check visa requirements, visa-free access, and entry rules by passport nationality. Compare Schengen 90/180 day limits, passport validity rules, eVisa options, and transit requirements. Updated 2026.',
   alternates: {
     canonical: 'https://visainfoguide.com/',
   },
@@ -23,7 +23,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: 'Visa Requirements by Passport (2026) | VisaInfoGuide',
-    description: 'Check visa requirements, visa-free access, and entry rules by passport. Compare stay limits and Schengen 90/180 rules. Updated 2026.',
+    description: 'Check visa requirements, visa-free access, and entry rules by passport nationality. Compare Schengen 90/180 day limits, passport validity rules, eVisa options, and transit requirements. Updated 2026.',
     type: 'website',
     url: 'https://visainfoguide.com/',
     images: [
@@ -39,7 +39,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Visa Requirements by Passport (2026) | VisaInfoGuide',
-    description: 'Check visa requirements, visa-free access, and entry rules by passport. Compare stay limits and Schengen 90/180 rules. Updated 2026.',
+    description: 'Check visa requirements, visa-free access, and entry rules by passport nationality. Compare Schengen 90/180 day limits, passport validity rules, eVisa options, and transit requirements. Updated 2026.',
     images: ['/og/home-og'],
   },
 };

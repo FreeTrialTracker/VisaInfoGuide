@@ -7,7 +7,7 @@ import { canonicalUrl } from '@/lib/seo';
 
 export const metadata: Metadata = {
   title: 'Visa-Free Countries by Passport (2026) | VisaInfoGuide',
-  description: 'Discover which countries you can visit visa-free based on your passport. Browse the full list of visa-free destinations for US, UK, Indian, and 90+ other passports.',
+  description: 'Discover which countries you can visit visa-free based on your passport. Browse the complete list of visa-free destinations for US, UK, Indian, Australian, and 90+ other passports — with stay limits and entry conditions.',
   alternates: {
     canonical: canonicalUrl('/visa-free-countries'),
   },

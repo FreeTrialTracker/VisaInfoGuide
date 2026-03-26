@@ -11,6 +11,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import Breadcrumbs from '@/components/Breadcrumbs';
 import { MapPin, Shield, Clock, CircleCheck as CheckCircle, CircleAlert as AlertCircle, Building2, ChevronRight } from 'lucide-react';
+import BackNavigation from '@/components/BackNavigation';
 
 export const revalidate = 86400;
 
@@ -145,6 +146,7 @@ export default function AirportTransitHotelDetailPage({
 
       <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
         <div className="container mx-auto px-4 py-8 max-w-4xl">
+          <BackNavigation fallbackUrl="/airport-transit-hotels" label="Back" />
           <Breadcrumbs
             items={[
               { name: 'Airport Transit Hotels', url: '/airport-transit-hotels' },

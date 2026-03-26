@@ -9,6 +9,6 @@ export default function robots(): MetadataRoute.Robots {
         disallow: ['/api/'],
       },
     ],
-    sitemap: 'https://visainfoguide.com/sitemap.xml',
+    sitemap: 'https://visainfoguide.com/sitemap-index.xml',
   };
 }

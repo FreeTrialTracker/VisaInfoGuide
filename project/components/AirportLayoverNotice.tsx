@@ -23,7 +23,7 @@ export default function AirportLayoverNotice({ variant = 'airport transit hotels
         <p className="text-sm text-teal-800 leading-relaxed mb-3">
           Many international airports offer{' '}
           <a
-            href="https://hotelinairport.com"
+            href="https://www.restinairport.com"
             target="_blank"
             rel="noopener noreferrer"
             className="font-medium underline underline-offset-2 hover:text-teal-600 transition-colors"
@@ -36,7 +36,7 @@ export default function AirportLayoverNotice({ variant = 'airport transit hotels
           connections running 6 hours or more.
         </p>
         <a
-          href="https://hotelinairport.com"
+          href="https://www.restinairport.com"
           target="_blank"
           rel="noopener noreferrer"
           className="inline-flex items-center gap-2 bg-teal-600 hover:bg-teal-700 text-white text-sm font-semibold px-4 py-2 rounded-lg transition-colors"

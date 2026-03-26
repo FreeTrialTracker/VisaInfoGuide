@@ -7,9 +7,9 @@ import { Badge } from '@/components/ui/badge';
 import AirportLayoverNotice from '@/components/AirportLayoverNotice';
 
 const PAGE_URL = canonicalUrl('/destination/schengen-area');
-const TITLE = 'Schengen Area Visa Requirements by Nationality (2026) | VisaInfoGuide';
+const TITLE = 'Schengen Area Visa Requirements by Nationality 2026 | VisaInfoGuide';
 const DESCRIPTION =
-  'Complete guide to Schengen Area entry requirements. Learn which passports qualify for visa-free travel, how the 90/180-day rule works, eVisa options, and what documents you need to visit 29 European countries.';
+  'Schengen Area visa requirements by passport nationality. Check visa-free access, the 90/180-day rule, passport validity requirements, and entry documents needed for 29 European countries.';
 
 export const metadata: Metadata = {
   title: TITLE,

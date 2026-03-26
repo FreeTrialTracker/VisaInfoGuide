@@ -248,7 +248,7 @@ export default function VisaGuidesPage() {
                 The Schengen Area is a zone of 27 European countries that have abolished internal border controls. Non-EU nationals with visa-free access can stay for up to 90 days in any 180-day rolling period across the entire Schengen zone — not just one country. Overstaying this limit can result in fines, deportation, and future entry bans.
               </p>
               <p className="text-gray-600 leading-relaxed mb-6">
-                Long-stay visas (type D visas) are available for those who wish to remain in a Schengen country beyond 90 days, such as for study, work, or family reunification purposes.
+                Long-stay visas (type D visas) are available for those who wish to remain in a Schengen country beyond 90 days, such as for study, work, or <a href="https://www.immigrationinfoguide.com" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:text-blue-800 underline underline-offset-2 font-medium">family reunification and immigration purposes</a>.
               </p>
 
               <h3 className="text-xl font-semibold text-gray-900 mb-3">How Passport Strength is Measured</h3>
@@ -273,6 +273,39 @@ export default function VisaGuidesPage() {
                 Visa policies are subject to change without notice. Always verify requirements directly with the official embassy or consulate of your destination country, or consult their official government immigration portal, before finalizing your travel plans.
               </p>
             </div>
+          </div>
+
+          <div className="mt-12 grid sm:grid-cols-2 gap-5">
+            <aside className="bg-blue-50 border border-blue-200 rounded-xl p-6 flex items-start gap-4">
+              <div className="flex-shrink-0 w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center mt-0.5">
+                <svg className="w-5 h-5 text-blue-700" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2" aria-hidden="true">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M9 12h3.75M9 15h3.75M9 18h3.75m3 .75H18a2.25 2.25 0 002.25-2.25V6.108c0-1.135-.845-2.098-1.976-2.192a48.424 48.424 0 00-1.123-.08m-5.801 0c-.065.21-.1.433-.1.664 0 .414.336.75.75.75h4.5a.75.75 0 00.75-.75 2.25 2.25 0 00-.1-.664m-5.8 0A2.251 2.251 0 0113.5 2.25H15c1.012 0 1.867.668 2.15 1.586m-5.8 0c-.376.023-.75.05-1.124.08C9.095 4.01 8.25 4.973 8.25 6.108V8.25m0 0H4.875c-.621 0-1.125.504-1.125 1.125v11.25c0 .621.504 1.125 1.125 1.125h9.75c.621 0 1.125-.504 1.125-1.125V9.375c0-.621-.504-1.125-1.125-1.125H8.25z" />
+                </svg>
+              </div>
+              <div>
+                <p className="text-sm font-semibold text-blue-900 mb-1">Staying Longer or Moving Abroad?</p>
+                <p className="text-sm text-blue-800 leading-relaxed mb-3">For work visas, permanent residency, family reunification, and long-term immigration guides, visit ImmigrationInfoGuide — our dedicated resource for settling abroad in 100+ countries.</p>
+                <a href="https://www.immigrationinfoguide.com" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 bg-blue-700 hover:bg-blue-800 text-white text-sm font-semibold px-4 py-2 rounded-lg transition-colors">
+                  Explore immigration guides
+                  <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2" aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" /></svg>
+                </a>
+              </div>
+            </aside>
+            <aside className="bg-teal-50 border border-teal-200 rounded-xl p-6 flex items-start gap-4">
+              <div className="flex-shrink-0 w-10 h-10 bg-teal-100 rounded-lg flex items-center justify-center mt-0.5">
+                <svg className="w-5 h-5 text-teal-700" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2" aria-hidden="true">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 12l8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25" />
+                </svg>
+              </div>
+              <div>
+                <p className="text-sm font-semibold text-teal-900 mb-1">Connecting Flight or Long Layover?</p>
+                <p className="text-sm text-teal-800 leading-relaxed mb-3">Find airport transit hotels, airside rest areas, and layover accommodation guides for 200+ international airports at RestInAirport — so you can rest without leaving the terminal.</p>
+                <a href="https://www.restinairport.com" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 bg-teal-600 hover:bg-teal-700 text-white text-sm font-semibold px-4 py-2 rounded-lg transition-colors">
+                  Find airport hotels
+                  <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2" aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" /></svg>
+                </a>
+              </div>
+            </aside>
           </div>
 
         </div>
