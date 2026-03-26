@@ -11,7 +11,7 @@ const apps = [
     category: 'Immigration & Travel',
     domain: 'RestInAirport.com',
     url: 'https://www.restinairport.com',
-    logo: '/RestInAirport.com.png',
+    logo: '/restinairport-logo.png',
     description:
       'RestInAirport.com is your go-to platform for finding the best way to rest during any airport layover, anywhere in the world. Long connections, overnight flights, and transit stops do not have to be exhausting or uncertain. Discover airside transit hotels, sleep pods, private suites, and lounges you can access without leaving the airport. Every listing is built to answer what actually matters: Can you stay without immigration, where is it located, and how do you get there. Clear information, no guesswork, real options, so you can rest smarter and travel better.',
   },
