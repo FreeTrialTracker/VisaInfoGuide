@@ -60,17 +60,26 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   let title: string = buildTitle({ type: 'pair', passport: passport.name, destination: destination.name });
 
+  const isUsChinaPair = params.passport === 'united-states' && params.destination === 'china';
+  if (isUsChinaPair) {
+    title = 'Do US Citizens Need a Visa for China? (Updated March 2026)';
+  }
+
+  const finalDescription = isUsChinaPair
+    ? 'US citizens can enter China visa-free for up to 30 days under a temporary policy valid through December 2026. See entry rules, passport requirements, and what to verify before you travel.'
+    : description;
+
   const confidence = visaRule ? calculateDataConfidence(visaRule) : 'low';
 
   return {
     title,
-    description,
+    description: finalDescription,
     alternates: {
       canonical: canonicalUrl(`/passport/${params.passport}/destination/${params.destination}`),
     },
     openGraph: {
       title,
-      description,
+      description: finalDescription,
       url: canonicalUrl(`/passport/${params.passport}/destination/${params.destination}`),
       type: 'website',
     },
@@ -165,6 +174,31 @@ export default async function PairPage({ params }: Props) {
     { name: destination.name, url: canonicalUrl(`/passport/${params.passport}/destination/${params.destination}`) },
   ]);
 
+  const isUsChinaPage = params.passport === 'united-states' && params.destination === 'china';
+
+  const usChinaArticleSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: 'Do US Citizens Need a Visa for China?',
+    description: 'US citizens can enter China visa-free for up to 30 days under a temporary unilateral policy. Entry conditions, passport validity rules, and what to check before travel.',
+    datePublished: '2024-01-01',
+    dateModified: '2026-03-27',
+    author: {
+      '@type': 'Organization',
+      name: 'VisaInfoGuide',
+      url: 'https://visainfoguide.com',
+    },
+    publisher: {
+      '@type': 'Organization',
+      name: 'VisaInfoGuide',
+      url: 'https://visainfoguide.com',
+    },
+    mainEntityOfPage: {
+      '@type': 'WebPage',
+      '@id': 'https://visainfoguide.com/passport/united-states/destination/china',
+    },
+  };
+
   return (
     <>
       <script
@@ -179,6 +213,12 @@ export default async function PairPage({ params }: Props) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
+      {isUsChinaPage && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(usChinaArticleSchema) }}
+        />
+      )}
       <main className="min-h-screen bg-gray-50">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
           <Breadcrumbs

@@ -46,6 +46,20 @@ const nextConfig = {
       },
     ];
   },
+  async redirects() {
+    return [
+      {
+        source: '/visa-requirements/us-citizens/china',
+        destination: '/passport/united-states/destination/china',
+        permanent: true,
+      },
+      {
+        source: '/visa-requirements/us-citizens',
+        destination: '/passport/united-states',
+        permanent: true,
+      },
+    ];
+  },
   async rewrites() {
     return [
       {
