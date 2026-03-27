@@ -168,13 +168,19 @@ export default async function PairPage({ params }: Props) {
 
   const faqSchema = faqJsonLd(faqs);
 
-  const breadcrumbSchema = breadcrumbJsonLd([
-    { name: 'Home', url: 'https://visainfoguide.com' },
-    { name: `${passport.name} Passport`, url: canonicalUrl(`/passport/${params.passport}`) },
-    { name: destination.name, url: canonicalUrl(`/passport/${params.passport}/destination/${params.destination}`) },
-  ]);
-
   const isUsChinaPage = params.passport === 'united-states' && params.destination === 'china';
+
+  const breadcrumbSchema = isUsChinaPage
+    ? breadcrumbJsonLd([
+        { name: 'Home', url: 'https://visainfoguide.com' },
+        { name: 'United States Passport', url: 'https://visainfoguide.com/passport/united-states' },
+        { name: 'China', url: 'https://visainfoguide.com/passport/united-states/destination/china' },
+      ])
+    : breadcrumbJsonLd([
+        { name: 'Home', url: 'https://visainfoguide.com' },
+        { name: `${passport.name} Passport`, url: canonicalUrl(`/passport/${params.passport}`) },
+        { name: destination.name, url: canonicalUrl(`/passport/${params.passport}/destination/${params.destination}`) },
+      ]);
 
   const usChinaArticleSchema = {
     '@context': 'https://schema.org',
@@ -222,11 +228,17 @@ export default async function PairPage({ params }: Props) {
       <main className="min-h-screen bg-gray-50">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
           <Breadcrumbs
-            items={[
-              { name: 'Resources', url: '/resources' },
-              { name: passport.name, url: `/passport/${params.passport}` },
-              { name: destination.name, url: `/passport/${params.passport}/destination/${params.destination}` },
-            ]}
+            items={isUsChinaPage
+              ? [
+                  { name: 'United States', url: '/passport/united-states' },
+                  { name: 'China', url: '/passport/united-states/destination/china' },
+                ]
+              : [
+                  { name: 'Resources', url: '/resources' },
+                  { name: passport.name, url: `/passport/${params.passport}` },
+                  { name: destination.name, url: `/passport/${params.passport}/destination/${params.destination}` },
+                ]
+            }
           />
 
           <h1 className="text-4xl font-bold text-gray-900 mb-6">
